@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TemplateOps Draft Manager</title>
+    <meta name="description" content="Internal Etsy seller tool for preparing digital product draft listings.">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Internal seller workflow tool</p>
+        <h1>TemplateOps Draft Manager</h1>
+        <p class="lede">
+          TemplateOps Draft Manager helps prepare Etsy draft listings for digital products such as Notion templates, spreadsheet trackers and printable PDF kits.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Purpose</h2>
+        <p>
+          This app is used by the shop owner to create and review draft listings before they are manually checked in Etsy Seller. It is not a public marketplace tool, SaaS product or buyer-facing application.
+        </p>
+      </section>
+
+      <section class="section grid">
+        <div>
+          <h2>What It Does</h2>
+          <ul>
+            <li>Prepares draft listings for digital downloads.</li>
+            <li>Uploads listing images and product files for review.</li>
+            <li>Reads shop and listing metadata needed for verification.</li>
+            <li>Keeps publishing decisions manual inside Etsy Seller.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Requested Access</h2>
+          <ul>
+            <li><code>listings_r</code> to verify listing metadata.</li>
+            <li><code>listings_w</code> to create and update draft listings.</li>
+            <li><code>shops_r</code> to identify the connected shop.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Publishing Policy</h2>
+        <p>
+          The app does not automatically publish listings. Drafts are reviewed manually by the seller before anything goes live on Etsy.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms</a>
+        <p>
+          The term "Etsy" is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
