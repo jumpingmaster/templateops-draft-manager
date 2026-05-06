@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Etsy OAuth Callback | TemplateOps Draft Manager</title>
+    <meta name="description" content="OAuth callback page for TemplateOps Draft Manager.">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="page document">
+      <a class="back" href="./index.html">Back</a>
+      <h1>Etsy OAuth Callback</h1>
+      <p class="muted">
+        This page receives the authorization response for TemplateOps Draft Manager.
+      </p>
+
+      <section class="section">
+        <h2>Authorization Response</h2>
+        <p id="status">Reading callback parameters...</p>
+        <pre id="callback-output" class="callback-output"></pre>
+        <button id="copy-url" class="button" type="button">Copy Full Callback URL</button>
+      </section>
+
+      <footer class="footer">
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms</a>
+      </footer>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const output = document.getElementById("callback-output");
+      const status = document.getElementById("status");
+      const data = {
+        code: params.get("code") || "",
+        state: params.get("state") || "",
+        error: params.get("error") || "",
+        error_description: params.get("error_description") || "",
+        full_url: window.location.href
+      };
+
+      output.textContent = JSON.stringify(data, null, 2);
+      status.textContent = data.error
+        ? "Etsy returned an authorization error."
+        : "Copy the full callback URL and use it for the local token exchange.";
+
+      document.getElementById("copy-url").addEventListener("click", async () => {
+        await navigator.clipboard.writeText(window.location.href);
+      });
+    </script>
+  </body>
+</html>
